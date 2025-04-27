@@ -1,0 +1,473 @@
+@import 'src/styles.scss';
+
+// .services-page {
+//   padding-top: 80px; // Account for fixed header
+// }
+
+/* Hero Section */
+.services-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../../assets/innova4.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease;
+    }
+    
+    p {
+      font-size: 1.5rem;
+      animation: fadeInUp 1s ease 0.2s forwards;
+      opacity: 0;
+    }
+  }
+}
+
+/* Main Services Section */
+.services-main-section {
+  padding: 5rem 0;
+  background-color: $background-color;
+  
+  .section-title {
+    text-align: center;
+    color: $primary-color;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    color: $text-light;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  
+  .service-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .service-header {
+      padding: 1.5rem;
+      background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%));
+      color: white;
+      display: flex;
+      align-items: center;
+      
+      .service-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        
+        i {
+          font-size: 1.5rem;
+        }
+      }
+      
+      h3 {
+        margin: 0;
+        font-size: 1.4rem;
+      }
+    }
+    
+    .service-image {
+      height: 200px;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+    }
+    
+    &:hover .service-image img {
+      transform: scale(1.1);
+    }
+    
+    .service-details {
+      padding: 1.5rem;
+      
+      p {
+        margin-bottom: 1.5rem;
+        color: $text-color;
+        line-height: 1.6;
+      }
+      
+      .service-features {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 1.5rem;
+        
+        li {
+          margin-bottom: 0.8rem;
+          display: flex;
+          align-items: center;
+          
+          i {
+            color: $secondary-color;
+            margin-right: 0.8rem;
+          }
+        }
+      }
+    }
+    
+    .service-pricing {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-top: 1px solid #eee;
+      
+      .price {
+        .amount {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: $primary-color;
+        }
+        
+        .unit {
+          color: $text-light;
+          font-size: 1rem;
+        }
+      }
+      
+      .btn-book {
+        background: $secondary-color;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background: darken($secondary-color, 10%);
+        }
+      }
+    }
+  }
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 5rem 0;
+  background: white;
+  
+  .section-title {
+    text-align: center;
+    color: $primary-color;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .benefit-card {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .benefit-icon {
+      width: 80px;
+      height: 80px;
+      background: lighten($primary-color, 45%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      
+      i {
+        font-size: 2rem;
+        color: $primary-color;
+      }
+    }
+    
+    h3 {
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      color: $text-light;
+      line-height: 1.6;
+    }
+  }
+}
+
+/* Fleet Showcase */
+.fleet-showcase {
+  padding: 5rem 0;
+  background-color: $background-color;
+  
+  .section-title {
+    text-align: center;
+    color: $primary-color;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    color: $text-light;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+  }
+  
+  .fleet-carousel {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    
+    .carousel-slide {
+      min-width: 100%;
+      
+      img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+      
+      .vehicle-info {
+        padding: 1.5rem;
+        background: white;
+        text-align: center;
+        
+        h3 {
+          color: $primary-color;
+          margin-bottom: 0.5rem;
+        }
+        
+        p {
+          margin-bottom: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+          i {
+            margin-right: 0.5rem;
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+    
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: rgba(0, 0, 0, 0.8);
+      }
+      
+      &.prev {
+        left: 20px;
+      }
+      
+      &.next {
+        right: 20px;
+      }
+    }
+  }
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 5rem 0;
+  background: linear-gradient(rgba($primary-color, 0.9), rgba($primary-color, 0.9)), url('../../../assets/office.jpeg');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    
+    a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      
+      i {
+        margin-right: 0.5rem;
+      }
+    }
+    
+    .btn-call {
+      background: $secondary-color;
+      color: white;
+      
+      &:hover {
+        background: darken($secondary-color, 10%);
+        transform: translateY(-3px);
+      }
+    }
+    
+    .btn-contact {
+      background: white;
+      color: $primary-color;
+      
+      &:hover {
+        background: darken(white, 10%);
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .services-hero {
+    height: 40vh;
+    
+    .hero-content {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  }
+  
+  .fleet-carousel {
+    .carousel-slide {
+      img {
+        height: 350px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero {
+    height: 35vh;
+    
+    .hero-content {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .fleet-carousel {
+    .carousel-slide {
+      img {
+        height: 300px !important;
+      }
+    }
+  }
+}

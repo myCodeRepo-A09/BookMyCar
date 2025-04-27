@@ -1,0 +1,23 @@
+<header class="header">
+    <div class="container">
+        <div class="logo-container">
+            <img src="assets/logo.png" alt="Kanthale's Morya Cab Services Logo" class="logo">
+            <h1 class="title">Ashirwad Tours and Travels</h1>
+        </div>
+
+        <button class="hamburger" (click)="toggleMenu()" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" [class.active]="isMenuOpen">
+            <ul>
+                <li><a href="/" routerLinkActive="active">Home</a></li>
+                <li><a href="/about" routerLinkActive="active">About</a></li>
+                <li><a href="/services" routerLinkActive="active">Our Services</a></li>
+                <li><a href="/contact" routerLinkActive="active">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

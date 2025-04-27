@@ -1,0 +1,352 @@
+@import 'src/styles.scss';
+
+// .about-page {
+//  // padding-top: 80px; // Account for fixed header
+// }
+
+/* Hero Section */
+.about-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../../assets/owner.jpeg');
+  background-size: cover;
+  background-position: top;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease;
+    }
+    
+    p {
+      font-size: 1.5rem;
+      animation: fadeInUp 1s ease 0.2s forwards;
+      opacity: 0;
+    }
+  }
+}
+
+/* Quick Booking Section */
+.quick-book-section {
+  background-color: $primary-color;
+  color: white;
+  padding: 3rem 0;
+  position: relative;
+  margin-top: -50px;
+  z-index: 2;
+  
+  .book-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+    color: $text-color;
+    
+    h2 {
+      color: $primary-color;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  .booking-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    
+    .form-group {
+      margin-bottom: 1rem;
+      
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: $primary-color;
+      }
+      
+      input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+    }
+    
+    .btn-book {
+      grid-column: 1 / -1;
+      background-color: $secondary-color;
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+  }
+}
+
+/* About Info Section */
+.about-info-section {
+  padding: 5rem 0;
+  background-color: $background-color;
+  
+  .about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  
+  .about-text {
+    flex: 1;
+    
+    h2 {
+      color: $primary-color;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    
+    h3 {
+      color: $primary-color;
+      margin: 2rem 0 1rem;
+    }
+    
+    .features-list {
+      list-style: none;
+      padding: 0;
+      
+      li {
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+        
+        i {
+          color: $secondary-color;
+          margin-right: 0.8rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  
+  .about-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    
+    .image-caption {
+      padding: 1rem;
+      background: $primary-color;
+      color: white;
+      text-align: center;
+      font-style: italic;
+    }
+  }
+}
+
+/* Fleet Gallery Section */
+.fleet-gallery-section {
+  padding: 5rem 0;
+  background: white;
+  
+  h2 {
+    text-align: center;
+    color: $primary-color;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    text-align: center;
+    color: $text-light;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+  }
+  
+  .fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .fleet-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .vehicle-image {
+      height: 200px;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+    }
+    
+    .vehicle-info {
+      padding: 1.5rem;
+      
+      h3 {
+        color: $primary-color;
+        margin-bottom: 1rem;
+      }
+      
+      p {
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        
+        i {
+          margin-right: 0.5rem;
+          color: $secondary-color;
+          width: 20px;
+        }
+      }
+    }
+  }
+}
+
+/* Team Section */
+.team-section {
+  padding: 5rem 0;
+  background-color: $background-color;
+  
+  h2 {
+    text-align: center;
+    color: $primary-color;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    text-align: center;
+    color: $text-light;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .team-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding-bottom: 2rem;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+    }
+    
+    h3 {
+      color: $primary-color;
+      margin-bottom: 0.5rem;
+    }
+    
+    p {
+      margin-bottom: 0.5rem;
+      color: $text-light;
+      
+      &:last-child {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-hero {
+    height: 50vh;
+    
+    .hero-content {
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  
+  .quick-book-section {
+    margin-top: 0;
+    padding-top: 2rem;
+  }
+}

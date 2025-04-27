@@ -1,0 +1,106 @@
+<section class="about-page">
+    <!-- Hero Section -->
+    <div class="about-hero">
+        <div class="hero-content">
+            <h1>About Ashirwad Tours & Travels</h1>
+            <p>Your trusted travel partner in Navi Mumbai since 2010</p>
+        </div>
+    </div>
+
+    <!-- Quick Booking Section -->
+    <!-- <section class="quick-book-section">
+        <div class="container">
+            <div class="book-card">
+                <h2>Book Your Ride Today</h2>
+                <form class="booking-form">
+                    <div class="form-group">
+                        <label for="pickup">Pickup Location</label>
+                        <input type="text" id="pickup" placeholder="Enter pickup address">
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" placeholder="Enter destination">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Pickup Date</label>
+                        <input type="date" id="date">
+                    </div>
+                    <button type="submit" class="btn-book">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- About Information Section -->
+    <section class="about-info-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2010, Ashirwad Tours and Travels has grown from a single car operation to one of Navi
+                        Mumbai's most trusted transportation providers. Our commitment to safety, reliability, and
+                        customer satisfaction has been the driving force behind our success.</p>
+
+                    <h3>Why Choose Us?</h3>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> 24/7 customer support</li>
+                        <li><i class="fas fa-check-circle"></i> Well-maintained fleet</li>
+                        <li><i class="fas fa-check-circle"></i> Professional drivers</li>
+                        <li><i class="fas fa-check-circle"></i> Competitive pricing</li>
+                        <li><i class="fas fa-check-circle"></i> GPS tracked vehicles</li>
+                    </ul>
+                </div>
+
+                <div class="about-image">
+                    <img src="assets/office.jpeg" alt="Ashirwad Tours Office">
+                    <div class="image-caption">Our office in Kharghar, Navi Mumbai</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Gallery Section -->
+    <section class="fleet-gallery-section">
+        <div class="container">
+            <h2>Our Premium Fleet</h2>
+            <p class="subtitle">Well-maintained vehicles for every need</p>
+
+            <div class="fleet-grid">
+                <div class="fleet-card" *ngFor="let vehicle of fleet">
+                    <div class="vehicle-image">
+                        <img [src]="vehicle.image" [alt]="vehicle.name">
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>{{vehicle.name}}</h3>
+                        <p><i class="fas fa-users"></i> {{vehicle.capacity}} passengers</p>
+                        <p><i class="fas fa-rupee-sign"></i> {{vehicle.price}}/km</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2>We Are</h2>
+            <p class="subtitle">Dedicated professionals ensuring your comfort</p>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="assets/mama2.jpg" alt="Manager">
+                    <h3>Tukaram Kanthale</h3>
+                    <p>Manager</p>
+                    <p>19+ years experience</p>
+                </div>
+                <div class="team-card">
+                    <img src="assets/mama3.jpg" alt="Operations">
+                    <h3>Pandurang Kanthale</h3>
+                    <p>Operations</p>
+                    <p>18+ years experience</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</section>

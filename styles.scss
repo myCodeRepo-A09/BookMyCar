@@ -1,0 +1,192 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/* Color Variables */
+$primary-color: #2c3e50;       // Dark blue
+$secondary-color: #e74c3c;     // Red
+$accent-color: #3498db;        // Light blue
+$background-color: #f9f9f9;    // Light gray background
+$text-color: #333;             // Dark text
+$text-light: #777;             // Light text
+$white: #ffffff;
+$black: #000000;
+
+/* Font Variables */
+$font-primary: 'Poppins', sans-serif;
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $background-color;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+
+  &-primary {
+    background-color: $secondary-color;
+    color: white;
+    
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba($secondary-color, 0.3);
+    }
+  }
+
+  &-outline {
+    background-color: transparent;
+    border-color: $secondary-color;
+    color: $secondary-color;
+    
+    &:hover {
+      background-color: $secondary-color;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba($secondary-color, 0.3);
+    }
+  }
+}
+
+/* Form Elements */
+input, select, textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: $font-primary;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: $primary-color;
+}
+
+.error-message {
+  color: $secondary-color;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 600px;
+  }
+  
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+// Add this to your src/styles.scss
+body {
+    // Add padding to body to account for fixed header
+    padding-top: 70px; // Adjust based on your header height
+    
+    // Main content z-index management
+    main, app-root > *:not(app-header) {
+      position: relative;
+      z-index: 1;
+    }
+  }
+  
+  // Make sure header stays on top
+  app-header, header, .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }

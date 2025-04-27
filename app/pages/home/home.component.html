@@ -1,0 +1,195 @@
+<section class="hero">
+    <div class="hero-content">
+        <!-- <h1>Premium Cab Services in Navi Mumbai</h1>
+        <p>Safe, reliable, and comfortable transportation at your convenience</p> -->
+        <h1>Premium Cab Services in Navi Mumbai</h1>
+        <a class="btn btn-primary" href="/contact">Book Now</a>
+
+
+    </div>
+</section>
+
+<section class="about-section">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About</h2>
+                <p>Welcome to Ashirwad Tours and Travels Services, your trusted transportation partner in
+                    Navi Mumbai and beyond.
+                    With years of experience in the industry, we pride ourselves on delivering exceptional service with
+                    a focus on safety, comfort, and reliability.</p>
+                <p>Our fleet of well-maintained vehicles and professional drivers ensure that you reach your destination
+                    on time and in style. Whether you need airport transfers, city tours, or outstation rides, we've got
+                    you covered.</p>
+                <a href="/about" class="btn btn-outline">Learn More</a>
+            </div>
+            <div class="about-image">
+                <!-- <img src="assets/images/cab-service.jpg" alt="Our Cab Service"> -->
+
+                <section class="image-carousel-section">
+                    <div class="container">
+                        <h2 class="section-title">Our Premium Fleet</h2>
+                        <p class="section-subtitle">Experience comfort and luxury with our well-maintained vehicles</p>
+
+                        <div class="carousel-card">
+                            <div class="carousel-container">
+                                <div class="carousel-track">
+                                    <div class="carousel-slide">
+                                        <h1>Innova 7 Seater</h1>
+                                        <img src="assets/innova4.jpg" alt="Premium Car 1">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <h1>Swift 4 Seater</h1>
+                                        <img src="assets/swift.webp" alt="Premium Car 2">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <h1>Dezire 5 Seater</h1>
+                                        <img src="assets/dezirecab.webp" alt="Premium Car 3">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <h1>Bolero 7 Seater</h1>
+                                        <img src="assets/bolero.webp" alt="Premium Car 4">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <h1>Traveller 12 Seater</h1>
+                                        <img src="assets/traveller.webp" alt="Bolero Car 5">
+                                    </div>
+
+                                </div>
+
+                                <div class="carousel-nav">
+                                    <button class="prev-btn" (click)="prevSlide()">❮</button>
+                                    <button class="next-btn" (click)="nextSlide()">❯</button>
+                                </div>
+
+                                <div class="carousel-dots">
+                                    <span *ngFor="let _ of [1,2,3,4,5]; let i = index" class="dot"
+                                        [class.active]="currentSlide === i" (click)="goToSlide(i)"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-section">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">We offer a range of transportation solutions to meet your needs</p>
+
+        <div class="services-grid">
+            <div class="services-container">
+                <div class="service-card" *ngFor="let service of services" (mouseenter)="pauseSlider1(service)"
+                    (mouseleave)="resumeSlider1(service)">
+
+                    <!-- Card Header -->
+                    <div class="card-header">
+                        <h3>{{ service.title }}</h3>
+                        <div class="service-icon">
+                            <i [class]="service.icon"></i>
+                        </div>
+                    </div>
+
+                    <!-- Image Slider -->
+                    <div class="card-image-slider">
+                        <div class="slider-track"
+                            [style.transform]="'translateX(-' + (service.currentIndex * 100) + '%)'">
+                            <div class="slide" *ngFor="let image of service.images">
+                                <img [src]="image" [alt]="service.title + ' service'">
+                            </div>
+                        </div>
+
+                        <!-- Slider Controls -->
+                        <div class="slider-controls">
+                            <button class="slider-btn prev" (click)="prevSlide1(service)">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="slider-btn next" (click)="nextSlide1(service)">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Slider Indicators -->
+                        <div class="slider-indicators">
+                            <span *ngFor="let img of service.images; let i = index"
+                                [class.active]="i === service.currentIndex" (click)="goToSlide1(service, i)"></span>
+                        </div>
+                    </div>
+
+                    <!-- Card Description -->
+                    <div class="card-description">
+                        <p>{{ service.description }}</p>
+                        <a class="btn btn-primary" href="/contact">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="/services" class="btn btn-primary">View All Services</a>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials-section">
+    <div class="container">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">Don't just take our word for it - hear from our satisfied customers</p>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+                <div class="rating">
+                    <span *ngFor="let star of [1,2,3,4,5]">
+                        <i class="fas fa-star" [class.filled]="star <= testimonial.rating"></i>
+                    </span>
+                </div>
+                <p class="testimonial-text">"{{ testimonial.comment }}"</p>
+                <div class="testimonial-author">
+                    <strong>{{ testimonial.name }}</strong>
+                    <span>{{ testimonial.date }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="google-ratings">
+            <img src="assets/images/google-rating.png" alt="Google Ratings">
+            <div class="ratings-text">
+                <h3>Rated 4.8/5 on Google</h3>
+                <p>Based on 120+ customer reviews</p>
+            </div>
+        </div> -->
+    </div>
+</section>
+
+<!-- <section class="cta-section">
+    <div class="container">
+        <h2>Ready to experience premium cab services?</h2>
+        <p>Download our app or book online now</p>
+        <div class="cta-buttons">
+            <a routerLink="/booking" class="btn btn-primary">Book a Ride</a>
+            <a href="#" class="btn btn-outline">Download App</a>
+        </div>
+    </div>
+</section> -->
+
+<section class="location-section">
+    <div class="container">
+        <h2 class="section-title">Find Us</h2>
+        <p class="section-subtitle">Visit our office or contact us for booking</p>
+
+        <div class="map-card">
+            <div id="google-map" class="google-map"></div>
+            <div class="location-info">
+                <h3>Ashirwad Tours and Travels Headquarters</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Sector 11-Kharghar, Navi Mumbai, India</p>
+                <p><i class="fas fa-phone"></i> +91 8552980643.</p>
+                <p><i class="fas fa-envelope"></i> infobookmycar.com</p>
+                <p><i class="fas fa-clock"></i> Open for 24 hours</p>
+                <a href="https://maps.app.goo.gl/NgYe2nJo2nxbiy1c7" target="_blank" class="btn">Get Directions</a>
+            </div>
+        </div>
+    </div>
+</section>
